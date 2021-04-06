@@ -1,0 +1,109 @@
+/******************
+GENERAL STYLING
+*******************/
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:content-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-size: cover;
+    background-position: bottom;
+}
+.content, cite{
+    margin-top: 5rem;
+   margin-right: 8rem;
+   margin-bottom: 1rem;
+}
+cite{
+    margin-left: 2rem;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+#certs{
+    margin-top: 5rem;
+    text-align: center;
+}
+.tools,.skills{
+    margin-left: 6rem;
+    margin-right:5rem ;
+    float:left;
+}
+.skills{
+    margin-right:1rem ; 
+}
+strong + p{
+    margin-top:25px;
+    margin-left: 18px;
+}
+
+
+
+/******************
+COLOR STYLING
+*******************/
+#top,.skill,.skills,h2,.tool,.tools,.write, #certs,.name{
+    color:orangered;
+}
+
+header{
+    background-color:rgba(199, 190, 199, 0.377);
+}
+
+
+/******************
+IMAGE STYLING
+*******************/
+[alt="Andrews image"]{
+    width:41vw;
+    height:98vh;
+}
+[alt="my picture"]{
+    float:left;
+    border-radius: 50%;
+    margin-left: 4rem;
+}
+[alt="website image"],[alt="website top image"]{
+    margin: 2%;
+     width: 30vw;
+     height: 37vh;
+}
+[alt="website top image"]{
+    margin-top: 1rem;
+}
+footer img,cite img{
+    margin-right: 7rem;
+     margin-left: 7ex;
+     width:6vw;
+}
+cite img{
+    margin-right: 1rem;
+}
+[alt="website logo"]{
+    width:3vw; 
+}
+[alt="skills icon"],[alt="certificates icon"],cite img{
+    width:5vw; 
+}
+
+
+/******************
+NAV STYLING
+*******************/
+.active{
+    font-size: medium;
+    text-decoration:underline;
+}
+
+
+/******************
+FOOTER STYLING
+******************/
+footer{
+    word-spacing: 2px;
+   background-color:rgba(124, 120, 124, 0.637);
+    margin-top: 1rem;
+    width: 100%;
+}
