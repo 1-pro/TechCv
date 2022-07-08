@@ -1,39 +1,32 @@
-<!DOCTYPE html>
-<html lang="eng">
-<head>
-<meta charset="utf-8">
-<title>I am Andrew Okiki</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-</head>
+<?php 
+require_once("connect.php");
+require_once("head.php");?>
 <body >
-<header>
-       <b> <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color:rgba(139, 133, 139, 0.377);">
-                <a class="navbar-brand text-white" href="index.html"><h2><img src="icons/Trusted-Website-icon.png" alt="website logo">Andrew Okiki</h2></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                  <ul class="navbar-nav ">
-                    <li class="nav-item active">
-                      <a class="nav-link " id="top" href="index.html">Home <span class="sr-only">home page</span></a>
-                    </li>
-                    <li class="nav-item active">
-                            <a class="nav-link " href="portfolio.html">Portfolio</a>
-                    </li>
-                    <li class="nav-item active">
-                            <a class="nav-link " href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item active">
-                            <a class="nav-link " href="skills.html">Skills/Qualifications</a>                 
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </b>
-</header>
+<?php require_once("header.php");?>
 <div id="certs">
 <h3 class="mt-5 "><img src="icons/website-icon1.png" alt="certificates icon">ICT Certifications</h3>
+<?php  
+ function getdata(){
+  $query="SELECT * FROM certificate";
+  $sql=mysqli_query($con,$query);
+  if(mysqli_num_rows($sql)){
+  return mysqli_fetch_assoc($sql);
+  }else{
+      echo"No data".mysqli_connect_error();
+  }
+  }
+$query="SELECT * FROM certificate";
+$sql=mysqli_query($con,$query);
+$result=$sql->getdata();
+if(isset($_SESSION['certificate'])){
+  $sql=mysqli_query($con,$query);
+  while (mysqli_fetch_assoc($result)) {
+      print"$result";
+  }
+}else {
+  print'ERROR'.mysqli_connect_error();
+}
+?>
   <select value="ICT Certifications" class="mb-5 certs btn btn-large">
       <option value="Click-on Kaduna Digital skills Programme"><a class="text-white" href="">Click-on Kaduna Digital skills Program</a></option>
       <option value="IBM design thinking"><a class="text-white" href="">IBM design thinking</a></option>
@@ -116,12 +109,4 @@
   </div>
 </div>
 </b>
-<footer class="mb-0 px-2 py-2 ">
-  <a href="https://facebook.com"><img src="icons/facebook.png" alt="facebook image"></a>
-  <a href="https://twitter.com"><img src="icons/twitter.png" alt="twitter image"></a>
-  <a href="https://instagram.com"><img src="icons/instagram.png" alt="Instagram image"></a>
-  <a href="https://linkedin.com"><img src="icons/linkedin.png" alt="linkedin image"></a>
-  <b> <p class=" mt-3 text-white text-center"><a href="terms.html" class=" text-white mt-3">Terms and Conditions</a>&nbsp;|&nbsp;Made with love by <a class="text-white" href="mailtoandrewokiki01@gmail.com"> Andrew Okiki</a>&nbsp &copy;<script>document.write(new Date().getFullYear());</script></p></b>
-</footer>
-</body>
-</html>
+<?php require_once("footer.php");?>
